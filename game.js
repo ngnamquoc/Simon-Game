@@ -1,5 +1,5 @@
 let userClickedPattern=[];
-const gamePattern=[];
+let gamePattern=[];
 const buttonColors=["red", "blue", "green", "yellow"];
 
 //play audio accordingly
@@ -43,15 +43,19 @@ $(document).on("keydown",function(){
     level==-1?nextSequence():null;
 })
 
+function restartGame(){
+        level=-1;
+        gamePattern=[];
+}
+
 function wrongClassToggle(){
     $("body").addClass("game-over");
     setInterval(function(){
         $("body").removeClass("game-over");
     },200);
 
-    //reset level
-    level=-1;
 
+    restartGame();
     $("h1").html("Game Over, <br> Press Any Key to Restart <i class='fa fa-refresh fa-spin' style='font-size:3rem'></i>");
 }
 
