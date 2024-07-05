@@ -76,8 +76,8 @@ function checkAnswer(currentLevel){
         // console.log("empty userClickedPattern array");
         userClickedPattern=[];
 
-        //proceed to the next sequence after 1000ms
-        setInterval(nextSequence(),4000);
+        //proceed to the next sequence after 10000ms
+        setInterval(nextSequence(),10000);
         
         
     }else{
